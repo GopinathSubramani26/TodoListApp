@@ -12,7 +12,7 @@ class TaskAdapter(
     private var tasks: List<Task>,
     private val onTaskCheckChanged: (Task, Boolean) -> Unit,
     private val onEditTask: (Task) -> Unit,
-    private val onDeleteTask: (Task) -> Unit // New delete callback
+    private val onDeleteTask: (Task) -> Unit
 ) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -20,7 +20,7 @@ class TaskAdapter(
         val taskDescription: TextView = itemView.findViewById(R.id.task_description)
         val taskCompleted: CheckBox = itemView.findViewById(R.id.task_completed)
         val editTaskButton: ImageButton = itemView.findViewById(R.id.edit_task_button)
-        val deleteTaskButton: ImageButton = itemView.findViewById(R.id.delete_task_button) // New delete button
+        val deleteTaskButton: ImageButton = itemView.findViewById(R.id.delete_task_button)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
